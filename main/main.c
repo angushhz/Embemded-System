@@ -98,7 +98,7 @@ void active_Task(void* pvParameter) {
                         pRxMessage->reject++;
                         xQueueSendToFront(xQueue, (void *)&pRxMessage, (TickType_t)10);
                     } else {
-                        printf("This task %s is rejected %d times, skiping the task\n", pRxMessage->message, pRxMessage->reject);
+                        printf("This task %s is rejected %d times, skiping the task\n", pRxMessage->message, pRxMessage->reject++);
                         free(pRxMessage);
                     }
                 }
